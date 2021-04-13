@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
 
-void main() {
+  void main() {
   runApp(MyApp());
-}
+  }
 
-class MyApp extends StatelessWidget {
+  class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
-}
+  }
 
-class MyHomePage extends StatefulWidget {
+  class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -43,9 +43,9 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
-}
+  }
 
-class _MyHomePageState extends State<MyHomePage> {
+  class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -55,7 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      if(_counter == 0){
+        _counter++;
+      }
+      else{
+        _counter = _counter * 2;
+      }
     });
   }
 
@@ -110,4 +115,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
+  }
